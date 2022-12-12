@@ -71,7 +71,7 @@ class Symbol(object):
 
     def get_data(self, fname):
         '''Load dataframe with Share Price.'''
-        df = pd.read_csv(fname)
+        df = pd.read_csv("data/"+fname)
         reverseCloseSP500 = df['close'].array
         self.prices = reverseCloseSP500[::-1]
         self.periods = len(self.prices)
